@@ -5,6 +5,9 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 from data_loader import load_data, split_data
+import mlflow
+print("Tracking URI:", mlflow.get_tracking_uri())
+
 
 mlflow.set_experiment("California-Housing-Regression")
 
@@ -30,3 +33,4 @@ with mlflow.start_run() as run:
         f.write(run.info.run_id)
 
 print("Training & validation completed")
+
