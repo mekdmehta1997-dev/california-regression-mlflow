@@ -26,3 +26,10 @@ jobs:
 
     - name: Build Docker Image
       run: docker build -t california-ml .
+
+    - name: Upload MLflow Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+         name: mlflow-runs
+         path: mlruns
+
